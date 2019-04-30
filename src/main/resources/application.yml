@@ -5,7 +5,7 @@ spring:
   datasource:
     #mysql
     username: root
-    password: root
+    password: password
     driver-class-name: com.mysql.jdbc.Driver
     #默认使用Tomcat自带的db连接池
     maximum-pool-size: 30
