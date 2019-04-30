@@ -19,7 +19,7 @@ public interface SysUserDao {
     int addUser(SysUser user);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"where id=#{id}"})
-    SysUser selectById(int id);
+    SysUser selectById(String id);
 
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME,"where username=#{userName}"})
     SysUser selectByUserName(String userName);

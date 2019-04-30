@@ -1,0 +1,74 @@
+# yml 配置文件学习
+spring:
+  profiles:
+    active: dev
+  datasource:
+    #mysql
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    #默认使用Tomcat自带的db连接池
+    maximum-pool-size: 30
+    max-idle: 15
+    max-wait: 5000
+    min-idle: 10
+    initial-size: 15
+    validation-query: SELECT 1
+    test-on-borrow: false
+    test-while-idle: true
+    time-between-eviction-runs-millis: 18800
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jackson:
+    serialization:
+      indent_output: true
+  #mvc
+  # view：
+  #  prefix: /pages/
+  #  suffix: .templates
+  thymeleaf:
+    prefix: classpath:/templates
+    mode: html5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+  jmx:
+    default-domain: agentservice
+  # tomcat
+server:
+  tomcat:
+    #默认200
+    max-threads: 1000
+    uri-encoding: UTF-8
+  error:
+    path: /error
+  port: 8081
+  # 自定义失效时间
+  session:
+    timeout: 60
+  # mybatis
+mybatis:
+  config-location: classpath:mybatis-config.xml
+
+# 开发环境配置
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://47.93.22.22:3307/aylson?useUnicode=true&autoReconnect=true&allowMultiQueries=true&useSSL=false&characterEncoding=utf8
+
+---
+# 测试环境配置
+spring:
+  profiles: test
+  datasource:
+     url: jdbc:mysql://47.93.22.22:3307/aylson?useUnicode=true&autoReconnect=true&allowMultiQueries=true&useSSL=false&characterEncoding=utf8
+
+---
+# 生产环境配置
+spring:
+  profiles: prod
+  datasource:
+    url: jdbc:mysql://47.93.22.22:3307/aylson?useUnicode=true&autoReconnect=true&allowMultiQueries=true&useSSL=false&characterEncoding=utf8

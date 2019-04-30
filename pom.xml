@@ -13,7 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>expressboot</name>
 	<description>Demo project for Spring Boot</description>
-
 	<properties>
 		<!-- 工具包 -->
 		<commons-lang3.version>3.7</commons-lang3.version>
@@ -27,20 +26,12 @@
 		<druid.version>1.0.26</druid.version>
 		<mysql-connector-java.version>5.1.45</mysql-connector-java.version>
 		<mybatis-plus.version>2.1.9</mybatis-plus.version>
-		<!-- Spring包 -->
-		<spring.version>5.0.4.RELEASE</spring.version>
-		<!-- JSP包 -->
-		<jstl.version>1.2</jstl.version>
-		<servlet-api.version>2.5</servlet-api.version>
-		<jsp-api.version>2.0</jsp-api.version>
 		<!-- Shiro -->
 		<shiro.version>1.4.0</shiro.version>
 		<!-- Redis客户端 -->
 		<jedis.version>2.9.0</jedis.version>
 	</properties>
-
 	<dependencies>
-	<!-- Apache工具包 -->
 	<dependency>
 		<groupId>org.apache.commons</groupId>
 		<artifactId>commons-lang3</artifactId>
@@ -62,17 +53,12 @@
 		<artifactId>jackson-databind</artifactId>
 		<version>${jackson-databind.version}</version>
 	</dependency>
-	<dependency>
-		<groupId>log4j</groupId>
-		<artifactId>log4j</artifactId>
-		<version>${log4j.version}</version>
-	</dependency>
+
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
 		<version>${junit.version}</version>
 	</dependency>
-	<!-- DAO -->
 	<dependency>
 		<groupId>com.alibaba</groupId>
 		<artifactId>druid</artifactId>
@@ -93,14 +79,20 @@
 		<artifactId>mybatis-plus-generate</artifactId>
 		<version>${mybatis-plus.version}</version>
 	</dependency>
+	<dependency>
+		<groupId>redis.clients</groupId>
+		<artifactId>jedis</artifactId>
+		<version>${jedis.version}</version>
+	</dependency>
+	<dependency>
+	<groupId>com.alipay.sdk</groupId>
+	<artifactId>alipay-sdk-java</artifactId>
+	<version>3.0.52.ALL</version>
+	</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.0.1</version>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -117,6 +109,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 	</dependencies>
 

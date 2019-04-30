@@ -150,7 +150,7 @@
         // 初始化反馈类型下拉框
         sendJson("get", "/admin/feedback/type/list", {}, true, function (res) {
             if (res.status) {
-                var html = '<option value="-1">所有类型</option>';
+                var templates = '<option value="-1">所有类型</option>';
                 for(var i=0;i<res.data.length;i++) {
                     html += '<option value="'+res.data[i].id+'">'+res.data[i].name+'</option>';
                 }
